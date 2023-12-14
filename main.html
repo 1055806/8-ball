@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic 8-Ball</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #3498db; /* Background color */
+            color: #fff; /* Text color */
+        }
+
+        h1 {
+            color: #2c3e50; /* Heading color */
+            margin-bottom: 20px;
+        }
+
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            background-color: #2ecc71; /* Button background color */
+            color: #fff; /* Button text color */
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease; /* Smooth transition on hover */
+        }
+
+        button:hover {
+            background-color: #27ae60; /* Button background color on hover */
+        }
+
+        input {
+            font-size: 16px;
+            padding: 10px;
+            margin-top: 10px;
+            width: 80%;
+            border: none;
+            border-radius: 4px;
+            color: #333; /* Input text color */
+        }
+
+        #response {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Magic 8-Ball</h1>
+    <p>By: Samridh and Michael Mostly Samridh Though</p>
+  <p>Type your yes or no question: </p>
+
+    <!-- Add a text box for user input -->
+    <input type="text" id="question" placeholder="Enter your question">
+
+    <button onclick="shakeMagic8Ball()">Shake the Magic 8-Ball</button>
+
+    <p id="response"></p>
+
+    <script>
+        function shakeMagic8Ball() {
+            var responses = [
+                "Yes",
+                "No",
+                "Ask again later",
+                "Cannot predict now",
+                "Don't count on it",
+                "My sources say no",
+                "Outlook not so good",
+                "Yes, definitely",
+                "You may rely on it",
+                "As I see it, yes",
+                "Michael is a stupid monkey"
+            ];
+
+            var randomIndex = Math.floor(Math.random() * responses.length);
+            var response = responses[randomIndex];
+
+            // Get the input element and clear its value
+            var inputElement = document.getElementById("question");
+            inputElement.value = "";
+
+            document.getElementById("response").innerText = "The Magic 8-Ball says: " + response;
+        }
+    </script>
+
+</body>
+</html>
